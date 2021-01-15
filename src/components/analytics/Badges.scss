@@ -1,0 +1,20 @@
+#analytics-container {
+  margin: 1vw;
+}
+
+#badges-container {
+  margin: 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.badge-text {
+  margin-left: 2vw;
+}
