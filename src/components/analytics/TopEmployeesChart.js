@@ -1,6 +1,6 @@
 import { observer, inject } from 'mobx-react'
 import { useEffect } from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Label, Legend, XAxis, YAxis } from 'recharts';
 import { Tooltip } from '@material-ui/core';
 
 
@@ -18,7 +18,9 @@ const TopEmployeesChart = inject('ClientStore')(observer((props) => {
   return (
       <BarChart layout='vertical' width={500} height={250} data={ClientStore.topEmployees.map(e => { return { name: e.name.split(' ')[0], Sales: e.sales}})}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="number"/>
+        <XAxis type="number">
+          <Label value="Top Employees" offset={-15} position="insideBottomLeft" />
+        </XAxis>
         <YAxis dataKey="name" type="category" />
         <Tooltip />
         <Legend />
